@@ -1,5 +1,7 @@
 module = {}
 
+local grid = {}
+
 local function get_xy(i, j, width, height, size) 
     local x = (i - width / 2)
     local y = (j - height / 2) * .845
@@ -14,7 +16,6 @@ function module.generate_grid(world, width, height, size, sprite_batch)
     -- Create the components required for a grid object
 
     -- Generate grid hex entities
-    local grid = {}
     for i = 1, width do
         grid[i] = {}
         for j = 1, height do
@@ -26,8 +27,8 @@ function module.generate_grid(world, width, height, size, sprite_batch)
             grid[i][j] = world:addEntity({
                 position={x=x, y=y},
                 neighbors={},
-                children={},
-                background={},
+                --children={},
+                --background={},
             })
         end
     end
@@ -36,22 +37,19 @@ function module.generate_grid(world, width, height, size, sprite_batch)
     for i = 1, width do
         for j = 1, height do
             neighbors = {}
-
-            --table.insert(neighbors, i < width ? grid[i+1][j] : nil)
-
-            --[[
-            grid[i][j].neighbors = {
-                (i < width) ? grid[i+1][j] : nil,
-                (i < width) ? ((j % 2 == 0) ? grid[i][j+1] : grid[i+1][j+1]) : nil,
-                (i > 1) ? ((j % 2 == 0) ? grid[i-1][j+1] : grid[i][j+1]) : nil,
-                (i > 1) ? grid[i-1][j] : nil,
-                (i > 1) ? ((j % 2 == 0) ? grid[i][j-1] : grid[i-1][j-1]) : nil,
-                (i < width) ? ((j % 2 == 0) ? grid[i][j-1] : grid[i+1][j-1]) : nil,
-            }
-            ]]
-
+            hex = grid[i][j]
+            hex.neighbors.east = i < width and grid[i+1][j] or nil
+            hex.neighbors.southeast = i < width and (j % 2 == 0 and grid[i+1][j+1] or grid[i][j+1]) or nil
+            hex.neighbors.southwest = i > 1 and (j % 2 == 0 and grid[i][j+1] or grid[i-1][j+1]) or nil
+            hex.neighbors.west = i > 1 and grid[i-1][j] or nil
+            hex.neighbors.northwest = i > 1 and (j % 2 == 0 and grid[i][j-1] or grid[i-1][j-1]) or nil
+            hex.neighbors.northeast = i < width and (j % 2 == 0 and grid[i][j-1] or grid[i+1][j-1]) or nil
         end
     end
+end
+
+function module.add_hex(world, i, j)
+    return world:addEntity({hex = {slot=grid[i][j]}})
 end
 
 return module
