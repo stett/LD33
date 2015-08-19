@@ -1,0 +1,863 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"insert",
+				"insert_email_into_name_field_on_submit"
+			],
+			[
+				"Prod",
+				"ProductTinyImageList"
+			],
+			[
+				"Ign",
+				"IgnifyProduct"
+			],
+			[
+				"menu_ent",
+				"menu_entries_map"
+			],
+			[
+				"contex",
+				"context_processors"
+			],
+			[
+				"Ignif",
+				"IgnifyCategory"
+			],
+			[
+				"Igni",
+				"IgnifyProduct"
+			],
+			[
+				"get",
+				"get_min_max_price"
+			],
+			[
+				"num_jud",
+				"num_judges_in_unfilled_groups"
+			],
+			[
+				"judge",
+				"judge_group"
+			],
+			[
+				"Registr",
+				"Registration"
+			]
+		]
+	},
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 86.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"package:insta",
+				"Package Control: Install Package"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"",
+				"SFTP: Show Panel"
+			],
+			[
+				"sftp",
+				"SFTP: Browse Server…"
+			],
+			[
+				"package control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"package install",
+				"Package Control: Install Package"
+			],
+			[
+				"package discover	",
+				"Package Control: Discover Packages"
+			],
+			[
+				"package	",
+				"Package Control: List Packages"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"package c			",
+				"Package Control: Install Package"
+			],
+			[
+				"package control: install package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 520.0
+	},
+	"console":
+	{
+		"height": 189.0,
+		"history":
+		[
+			"Build",
+			"import urllib.request,os,sys; exec(\"if sys.version_info < (3,) or os.name != 'nt': raise OSError('This code is for Windows ST3 only!')\"); pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/stett/Source/hexeeds/src/elements.lua",
+		"/C/Users/stett/Source/optimism_02/inc/SpriteStrip.lua",
+		"/C/Users/stett/Source/optimism_02/inc/Draw.lua",
+		"/C/Users/stett/Source/optimism_02/inc/AnAL.lua",
+		"/C/Users/stett/Source/like/like.sublime-project",
+		"/C/Users/stett/Desktop/love-docs-2015-08-13/readme.txt",
+		"/C/Users/stett/Documents/Documents/Thoughts/digipen-track-status.txt",
+		"/C/Users/stett/Desktop/qs-for-digipen.txt",
+		"/C/Users/stett/Documents/Documents/Thoughts/children-and-noise-toys.txt",
+		"/C/Users/stett/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/stett/Source/last-man-standin/dialog-ideas.txt",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/Footer.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/Header.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/HomeSlideShowJavaScript.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/AccountOrderJavaScript.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/HomeSlideShow.html",
+		"/C/Users/stett/Desktop/digipen-track-status.txt",
+		"/C/Users/stett/Desktop/lt-unrecorded-hours.txt",
+		"/C/Users/stett/Desktop/Tanks For Less Delivery.txt",
+		"/C/Users/stett/Source/retro-bike-gear/template/js/cart.js",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/CheckoutCartItem.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/CartItemQtySelect.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/cart.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/CartContent.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/CartItem.html",
+		"/C/Users/stett/Documents/Documents/Letters/New Text Document.txt",
+		"/C/Users/stett/Source/old/GM/reg_key.txt",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/QuickViewContent.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/account_orderstatus.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Styles/less/theme.less",
+		"/C/Program Files/Sublime Text 3/pyexpat.pyd",
+		"/C/Users/stett/Documents/Documents/Letters/2015-4-10-josh.txt",
+		"/C/Users/stett/Desktop/A pulse on my stupid gauges.txt",
+		"/C/Users/stett/Documents/Documents/Letters/2-7-2015-laura.txt",
+		"/C/Users/stett/Documents/Documents/Letters/2015-3-10.txt",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/ExpressCheckoutConfirmation.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/page_contact_form.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/ConfirmOrder.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Styles/styles.css",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/ChooseCheckoutProviderJavaScript.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/js/init.js",
+		"/C/Users/stett/Downloads/full_template_q5i04_GreaseMonkey_20150407-1740/Panels/Header.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/HTMLHead.html",
+		"/C/Users/stett/Desktop/transcript.txt",
+		"/C/Users/stett/Source/retro-bike-gear/template/slide-show.css",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/SocialLinks.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Styles/social.css",
+		"/C/Users/stett/Source/retro-bike-gear/template/Emails/store_owner_abandoned_cart_email.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/HeaderSearch.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/SlideList.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Styles/slide-show.css",
+		"/C/Users/stett/Source/retro-bike-gear/template/Styles/less/overrides.less",
+		"/C/Users/stett/Source/old/C++/Physics Simulation/Quantum Mechanics/QSim/COMPILE_INSTRUCTIONS.txt",
+		"/C/Users/stett/Source/old/C++/Physics Simulation/Quantum Mechanics/QSim/8/QSim/gslp.h",
+		"/C/Users/stett/Source/retro-bike-gear/template/js/common.js",
+		"/C/Users/stett/Source/retro-bike-gear/template/product_comments.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/compare.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/category.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/ProductReviews.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/ProductReviewItem.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/PagesMenu.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/AccountNewReturnBreadcrumb.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/ProductDescription.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/ProductOtherDetails.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Emails/Snippets/InvoiceTotalRow.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/REVISION",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/ProductDetails.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/SideTopSellers.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/checkout_address.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/braintreepaypalvdotzero.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/BlogRecentPosts.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/blog.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/FastCartThickBoxJs.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/FancyBoxJs.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/js/fancy.js",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/FastCartThickBoxContent.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Styles/faceted-search.css",
+		"/C/Users/stett/Source/retro-bike-gear/template/Styles/font/FontAwesome.otf",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/FooterCategoryList.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/AccountBreadcrumb.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/LoginJavaScript.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/news.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/ChooseBillingAddress.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/SideNewsletterBox.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/InvoiceCustomerDetails.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Styles/less/init.less",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/ProductAddToCart.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/BrandProductListing.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/ProductThumbImage.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/ProductAddToCartAbove.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/ProductAddToCartRight.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/LogoImage.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/login.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/ProductTabs.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/AccountInboxMessage.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/ProductAddToCartBelow.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/product.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/order.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/ProductImagePopup.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Emails/product_review_email.html",
+		"/C/Users/stett/Source/retro-bike-gear/prod-template-backup/template/Panels/ProductDetails.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/PageRSSItem.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/page.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/ProductReviewList.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/HomeSaleProducts.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/HomeRecentBlogs.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/HomeNewProducts.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/HomeFeaturedProducts.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Styles/theme.css",
+		"/C/Users/stett/Source/retro-bike-gear/template/js/html5shiv.js",
+		"/C/Users/stett/Source/retro-bike-gear/template/Styles/less/style-editor-variables.less",
+		"/C/Users/stett/Source/retro-bike-gear/template/Styles/less/product-detail-page.less",
+		"/C/Users/stett/Source/retro-bike-gear/template/Styles/less/internal-variables.less",
+		"/C/Users/stett/Source/retro-bike-gear/template/Emails/email_integration_notice_email.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/ideal.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/createaccount_thanks.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/EstimatedShippingQuoteProduct.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/ProductVideos.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/vendor_products.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/SearchResultSectionProduct.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/product_video.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/productimage.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/ShippingQuoteProduct.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/product.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/Syndicate.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/Panels/SideCategoryTopSellers.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/test.html",
+		"/C/Users/stett/Source/retro-bike-gear/template/tags.html"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"",
+			"*.js",
+			".js",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"get_coods",
+			"snippet_productimageslightbox",
+			"prodimage",
+			"LightBoxImages",
+			"fancybox",
+			"switcher",
+			"data-swap-frequency",
+			"homeslideshow",
+			"CartItemQuantity",
+			"normalcoupons",
+			"quantity",
+			"ValidateQuantityForm",
+			"quantity",
+			"momen",
+			"header",
+			"slide",
+			"id=\"Footer\"",
+			"shopping bag",
+			"header",
+			"phoneIcon",
+			"call us",
+			"footer",
+			"trustlink",
+			"PromoLine",
+			"id=\"Header\"",
+			"header",
+			"promo",
+			"PTB20",
+			"div.radio input",
+			"CheckoutHideOrderTermsAndConditions",
+			"hear from us via email?",
+			"newsletter",
+			"contact",
+			"main.js",
+			"init.js",
+			"CouponCode",
+			"CartCode\nCartCode",
+			"join_mailing_list",
+			"uniform-join_mailing_list",
+			"subscribe",
+			"PTB20",
+			"data-swap-frequency",
+			"SocialConnect",
+			"<link",
+			"link",
+			"css",
+			".css",
+			"<link",
+			"link",
+			"SNIPPET_SocialLinks",
+			"social",
+			"fancybox",
+			"siteseal",
+			"HomeSlideShowJavaScript",
+			"flexslider",
+			"add to wishlist",
+			"accordion",
+			"accordi0n",
+			"accordian",
+			"accordion",
+			"#productreviews",
+			"jump_to_product_reviews",
+			"show_product_review_form",
+			"href=\"#ProductReviews\"",
+			"product review",
+			"sku",
+			"yousave",
+			"addtocart",
+			"SNIPPET_ProductAddToCart",
+			"productDetailsAddToCartForm",
+			"addtocartright",
+			"price",
+			"productaddtocart",
+			"check_product_review_form",
+			"GLOBAL_HideReviewEmail",
+			"review",
+			"Free Shipping",
+			"free shipping",
+			"Free Shipping on All Orders Over $50",
+			"184px",
+			".block",
+			"breadcrumb",
+			"footer .pagement",
+			"producttinyimagelist",
+			"imagescroll",
+			".content",
+			"content",
+			"breadcrumb",
+			"imagecarouselbox",
+			"productthumbimage",
+			"185px",
+			"border-left",
+			"#menu ",
+			"topmenu",
+			"pagement",
+			"pagemenu",
+			"border-top",
+			"pagemenu",
+			"header",
+			"pagemenu",
+			"quickview",
+			"productimage",
+			"productlist",
+			"list",
+			"productactionadd",
+			"productpricerating",
+			"a:hover",
+			"width: 272",
+			"width:272",
+			"width:272\\",
+			"productlist",
+			"#logo",
+			"currency",
+			"coupon-new.png",
+			"retrobikegear_small_70_1421188123__97062.png",
+			"label",
+			"include",
+			"lesshat.css",
+			"    \n",
+			"address",
+			"‎91911",
+			"fear and lo",
+			"holiday",
+			"alt",
+			"thumbnail",
+			"img",
+			"set_add_to_cart_link",
+			"clear_add_to_cart_link"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"SCRIPT"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "Build",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"home",
+				"Panels\\HomeSlideShow.html"
+			],
+			[
+				"header",
+				"Panels\\Header.html"
+			],
+			[
+				"panels/footer",
+				"Panels\\Footer.html"
+			],
+			[
+				"cartitemqty",
+				"Snippets\\CartItemQtySelect.html"
+			],
+			[
+				"snippet/cartitem",
+				"Snippets\\CheckoutCartItem.html"
+			],
+			[
+				"snippets/cartitem",
+				"Snippets\\CartItem.html"
+			],
+			[
+				"cartcontent",
+				"Panels\\CartContent.html"
+			],
+			[
+				"cart",
+				"cart.html"
+			],
+			[
+				"topmenu",
+				"Panels\\TopMenu.html"
+			],
+			[
+				"overrides",
+				"Styles\\less\\overrides.less"
+			],
+			[
+				"overri",
+				"Styles\\less\\overrides.less"
+			],
+			[
+				"theme.less",
+				"Styles\\less\\theme.less"
+			],
+			[
+				"footer",
+				"Panels\\Footer.html"
+			],
+			[
+				"overrid",
+				"Styles\\less\\overrides.less"
+			],
+			[
+				"homeslideshow",
+				"Panels\\HomeSlideShowJavaScript.html"
+			],
+			[
+				"",
+				"Panels\\HomeSlideShow.html"
+			],
+			[
+				"slideshow",
+				"Panels\\HomeSlideShow.html"
+			],
+			[
+				"social",
+				"Panels\\SocialLinks.html"
+			],
+			[
+				"product",
+				"product.html"
+			],
+			[
+				"slide",
+				"slide-show.css"
+			],
+			[
+				"override",
+				"Styles\\less\\overrides.less"
+			],
+			[
+				"common.js",
+				"js\\common.js"
+			],
+			[
+				"productaddtocart",
+				"Snippets\\ProductAddToCart.html"
+			],
+			[
+				"productreviews",
+				"Panels\\ProductReviews.html"
+			],
+			[
+				"roductdetails",
+				"Panels\\ProductDetails.html"
+			],
+			[
+				"product.html",
+				"product.html"
+			],
+			[
+				"category",
+				"category.html"
+			],
+			[
+				"brand",
+				"brands.html"
+			],
+			[
+				"fastcarthick",
+				"Snippets\\FastCartThickBoxJs.html"
+			],
+			[
+				"productlightbox",
+				"Snippets\\ProductImagesLightBox.html"
+			],
+			[
+				"ligthbox",
+				"Snippets\\ProductImagesLightBox.html"
+			],
+			[
+				"productthumbimage",
+				"Snippets\\ProductThumbImage.html"
+			],
+			[
+				"productaddtocartrigth",
+				"Snippets\\ProductAddToCartRight.html"
+			],
+			[
+				"productaddtocartbelow",
+				"Snippets\\ProductAddToCartBelow.html"
+			],
+			[
+				"productaddtocartright",
+				"Snippets\\ProductAddToCartRight.html"
+			],
+			[
+				"productdetail",
+				"Panels\\ProductDetails.html"
+			],
+			[
+				"productreview",
+				"Snippets\\ProductReviewItem.html"
+			],
+			[
+				"productdetails",
+				"Panels\\ProductDetails.html"
+			],
+			[
+				"init.less",
+				"Styles\\less\\init.less"
+			],
+			[
+				"style-edit",
+				"Styles\\less\\style-editor-variables.less"
+			],
+			[
+				"init.les",
+				"Styles\\less\\init.less"
+			],
+			[
+				"internal",
+				"Styles\\less\\internal-variables.less"
+			],
+			[
+				"theme.cs",
+				"Styles\\theme.css"
+			],
+			[
+				"style.c",
+				"Styles\\styles.css"
+			],
+			[
+				"producthtumbima",
+				"Snippets\\ProductThumbImage.html"
+			],
+			[
+				"tehme.css",
+				"Styles\\theme.css"
+			],
+			[
+				"style.css",
+				"Styles\\styles.css"
+			],
+			[
+				"panelpagesmenu",
+				"Panels\\PagesMenu.html"
+			],
+			[
+				".css",
+				"Styles\\theme.css"
+			],
+			[
+				"style",
+				"Styles\\styles.css"
+			],
+			[
+				"boa",
+				"C:\\Users\\stett\\AppData\\Roaming\\Sublime Text 3\\Packages\\User\\sftp_servers\\boa-hancock.json"
+			],
+			[
+				"context",
+				"store\\context_processors.py"
+			],
+			[
+				"base.h",
+				"templates\\base.html"
+			],
+			[
+				"mobile.less",
+				"mobile\\mobile.less"
+			],
+			[
+				"static/mobile/mobile",
+				"static\\mobile\\mobile.less"
+			],
+			[
+				"mobile.js",
+				"js\\mobile.js"
+			],
+			[
+				"custom",
+				"static\\js\\custom.js"
+			],
+			[
+				"mobile_device",
+				"templates\\mobile_devices.html"
+			],
+			[
+				"mobile_home",
+				"templates\\mobile_home.html"
+			],
+			[
+				"detail",
+				"templates\\mobile_detail.html"
+			],
+			[
+				"models",
+				"store\\models.py"
+			],
+			[
+				"urls",
+				"store\\urls.py"
+			],
+			[
+				"url",
+				"urls.py"
+			],
+			[
+				"cookie",
+				"templates\\cookie-trail.html"
+			],
+			[
+				"categ",
+				"templates\\category.html"
+			],
+			[
+				"sale-",
+				"templates\\sale-items.html"
+			],
+			[
+				"0086",
+				"store\\migrations\\0086_set_initial_sale_flags.py"
+			],
+			[
+				"setti",
+				"settings.py"
+			],
+			[
+				"admi",
+				"store\\admin.py"
+			],
+			[
+				"sale-ite",
+				"templates\\sale-items.html"
+			],
+			[
+				"sett",
+				"settings.py"
+			],
+			[
+				"conte",
+				"store\\context_processors.py"
+			],
+			[
+				"models.",
+				"dealer_portal\\models.py"
+			],
+			[
+				"setting",
+				"settings.py"
+			],
+			[
+				"mobile_ba",
+				"templates\\mobile_base.html"
+			],
+			[
+				"mobile",
+				"store\\mobile.py"
+			],
+			[
+				"views",
+				"store\\views.py"
+			],
+			[
+				"admin",
+				"store\\admin.py"
+			],
+			[
+				"detail.",
+				"templates\\detail.html"
+			],
+			[
+				"base",
+				"templates\\base.html"
+			],
+			[
+				"custom_ta",
+				"store\\templatetags\\custom_tags.py"
+			],
+			[
+				"settin",
+				"settings.py"
+			],
+			[
+				"style.",
+				"static\\less\\style.less"
+			],
+			[
+				"custom.js",
+				"static\\js\\custom.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 197.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
