@@ -18,6 +18,18 @@ return {
                 image:getHeight() / 2)
         end
 
+        -- Draw an offset dot for hex items with offsets
+        for entity in pairs(self.world:query('hex offset')) do
+            position = {
+                x = entity.hex.slot.position.x + entity.offset.x,
+                y = entity.hex.slot.position.y + entity.offset.y}
+            love.graphics.setColor(255, 255, 255, 255)
+            love.graphics.circle("fill", position.x, position.y, 2)
+            love.graphics.setColor(0, 0, 0, 255)
+            love.graphics.circle("line", position.x, position.y, 3)
+            love.graphics.setColor(255, 255, 255, 255)
+        end
+
         -- Draw lines between neighbors
         --[[
         love.graphics.setColor(255, 255, 255, 100)
