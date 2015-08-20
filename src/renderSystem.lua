@@ -1,3 +1,5 @@
+settings = require('settings')
+
 return {
     draw = function(self)
 
@@ -29,6 +31,16 @@ return {
             love.graphics.circle("line", position.x, position.y, 3)
             love.graphics.setColor(255, 255, 255, 255)
         end
+
+        -- Highlight hex slots containing hexes
+        --[[
+        for entity in pairs(self.world:query('position hexes')) do
+            if next(entity.hexes.list) ~= nil then
+                num = #entity.hexes.list 
+                love.graphics.print(tostring(num), entity.position.x - settings.HEX_SIZE / 3, entity.position.y - settings.HEX_SIZE / 3)
+            end
+        end
+        ]]
 
         -- Draw lines between neighbors
         --[[

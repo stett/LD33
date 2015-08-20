@@ -56,8 +56,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 86.0,
-		"last_filter": "install",
+		"height": 400.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -121,7 +121,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 520.0
+		"width": 408.0
 	},
 	"console":
 	{
@@ -144,6 +144,21 @@
 	},
 	"file_history":
 	[
+		"/C/Users/stett/Source/LD33/src/systems/render.lua",
+		"/C/Users/stett/Source/LD33/src/grid.lua",
+		"/C/Users/stett/Source/LD33/src/components.lua",
+		"/C/Users/stett/Source/LD33/src/lib/secs.lua",
+		"/C/Users/stett/Source/LD33/src/main.lua",
+		"/C/Users/stett/Source/LD33/src/systems/physics.lua",
+		"/C/Users/stett/Source/LD33/src/factories/grid.lua",
+		"/C/Users/stett/Source/LD33/src/systems/controls.lua",
+		"/C/Users/stett/Source/LD33/src/systems/animation.lua",
+		"/C/Users/stett/Source/LD33/src/lib/anim8.lua",
+		"/C/Program Files/LOVE/readme.txt",
+		"/C/Users/stett/Source/LD33/.gitignore",
+		"/C/Users/stett/Source/LD33/run.bat",
+		"/C/Users/stett/Source/LD33/run.batch",
+		"/C/Users/stett/Source/LD33/src/components/grid.lua",
 		"/C/Users/stett/Source/hexeeds/src/elements.lua",
 		"/C/Users/stett/Source/optimism_02/inc/SpriteStrip.lua",
 		"/C/Users/stett/Source/optimism_02/inc/Draw.lua",
@@ -256,22 +271,7 @@
 		"/C/Users/stett/Source/retro-bike-gear/template/js/html5shiv.js",
 		"/C/Users/stett/Source/retro-bike-gear/template/Styles/less/style-editor-variables.less",
 		"/C/Users/stett/Source/retro-bike-gear/template/Styles/less/product-detail-page.less",
-		"/C/Users/stett/Source/retro-bike-gear/template/Styles/less/internal-variables.less",
-		"/C/Users/stett/Source/retro-bike-gear/template/Emails/email_integration_notice_email.html",
-		"/C/Users/stett/Source/retro-bike-gear/template/ideal.html",
-		"/C/Users/stett/Source/retro-bike-gear/template/createaccount_thanks.html",
-		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/EstimatedShippingQuoteProduct.html",
-		"/C/Users/stett/Source/retro-bike-gear/template/Panels/ProductVideos.html",
-		"/C/Users/stett/Source/retro-bike-gear/template/vendor_products.html",
-		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/SearchResultSectionProduct.html",
-		"/C/Users/stett/Source/retro-bike-gear/template/product_video.html",
-		"/C/Users/stett/Source/retro-bike-gear/template/productimage.html",
-		"/C/Users/stett/Source/retro-bike-gear/template/Snippets/ShippingQuoteProduct.html",
-		"/C/Users/stett/Source/retro-bike-gear/template/Panels/product.html",
-		"/C/Users/stett/Source/retro-bike-gear/template/Panels/Syndicate.html",
-		"/C/Users/stett/Source/retro-bike-gear/template/Panels/SideCategoryTopSellers.html",
-		"/C/Users/stett/Source/retro-bike-gear/template/test.html",
-		"/C/Users/stett/Source/retro-bike-gear/template/tags.html"
+		"/C/Users/stett/Source/retro-bike-gear/template/Styles/less/internal-variables.less"
 	],
 	"find":
 	{
@@ -293,6 +293,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"get_xy",
+			"could not be found",
+			"version",
+			"addcomponent",
+			"world",
 			"get_coods",
 			"snippet_productimageslightbox",
 			"prodimage",
@@ -415,12 +420,7 @@
 			"address",
 			"‎91911",
 			"fear and lo",
-			"holiday",
-			"alt",
-			"thumbnail",
-			"img",
-			"set_add_to_cart_link",
-			"clear_add_to_cart_link"
+			"holiday"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -482,7 +482,7 @@
 	"pinned_build_system": "Build",
 	"replace":
 	{
-		"height": 50.0
+		"height": 68.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -491,6 +491,30 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"secs",
+				"src\\lib\\secs.lua"
+			],
+			[
+				"compon",
+				"src\\components.lua"
+			],
+			[
+				"",
+				"src\\components.lua"
+			],
+			[
+				"main",
+				"src\\main.lua"
+			],
+			[
+				"render",
+				"src\\systems\\render.lua"
+			],
+			[
+				"run",
+				"run.bat"
+			],
 			[
 				"home",
 				"Panels\\HomeSlideShow.html"
@@ -550,10 +574,6 @@
 			[
 				"homeslideshow",
 				"Panels\\HomeSlideShowJavaScript.html"
-			],
-			[
-				"",
-				"Panels\\HomeSlideShow.html"
 			],
 			[
 				"slideshow",
@@ -841,12 +861,12 @@
 	},
 	"select_symbol":
 	{
-		"height": 0.0,
+		"height": 400.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 400.0
 	},
 	"settings":
 	{

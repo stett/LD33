@@ -1,12 +1,12 @@
 
--- Create the new sex world - pardon, I meant "secs world"
-Secs = require('lib/secs')
-world = Secs:new()
+-- Create the new sex world - ahm, "secs world"
+local Secs = require('lib/secs')
+local world = Secs:new()
 
 -- Others
-settings = require('settings')
-components = require('components')
-grid = require('factories/grid')
+local settings = require('settings')
+local components = require('components')
+local grid = require('grid')
 
 
 function love.load()
@@ -15,18 +15,67 @@ function love.load()
     components.register(world)
 
     -- Add systems
-    world:addSystem('render', require('systems/render'))
+    world:addSystem('render', require('renderSystem'))
+    world:addSystem('physics', require('physicsSystem'))
 
     -- Generate the grid
     grid_sprite_batch = world:addEntity({sprite_batch={}})
-    grid.generate_grid(world, settings.GRID_SIZE.width, settings.GRID_SIZE.height, 20, grid_sprite_batch.sprite_batch.batch)
+    grid.generate_grid(world, settings.GRID_SIZE.width, settings.GRID_SIZE.height, settings.HEX_SIZE, grid_sprite_batch.sprite_batch.batch)
 
     -- Add some hexes to the grid?
-    hex = grid.add_hex(world, 51, 35)
-    world:attach(hex, {
-        sprite = {},
-        offset = {},
-        velocity = {x=3, y=0}})
+
+    -- "L"
+    world:attach(grid.add_hex(world, 31, 35), {sprite = {}, offset={}, velocity={x=10, y=-15}})
+    world:attach(grid.add_hex(world, 31, 36), {sprite = {}})
+    world:attach(grid.add_hex(world, 31, 37), {sprite = {}})
+    world:attach(grid.add_hex(world, 31, 38), {sprite = {}})
+    world:attach(grid.add_hex(world, 31, 39), {sprite = {}})
+    world:attach(grid.add_hex(world, 31, 40), {sprite = {}})
+    world:attach(grid.add_hex(world, 32, 40), {sprite = {}})
+
+    -- "D"
+    world:attach(grid.add_hex(world, 35, 38), {sprite = {}})
+    world:attach(grid.add_hex(world, 34, 38), {sprite = {}})
+    world:attach(grid.add_hex(world, 34, 39), {sprite = {}})
+    world:attach(grid.add_hex(world, 34, 40), {sprite = {}})
+    world:attach(grid.add_hex(world, 35, 40), {sprite = {}})
+    world:attach(grid.add_hex(world, 36, 39), {sprite = {}})
+    world:attach(grid.add_hex(world, 36, 37), {sprite = {}})
+    world:attach(grid.add_hex(world, 35, 36), {sprite = {}})
+    world:attach(grid.add_hex(world, 36, 35), {sprite = {}})
+
+    -- "-"
+    world:attach(grid.add_hex(world, 38, 38), {sprite = {}})
+    world:attach(grid.add_hex(world, 39, 38), {sprite = {}})
+
+    -- "3"
+    world:attach(grid.add_hex(world, 42, 35), {sprite = {}})
+    world:attach(grid.add_hex(world, 43, 35), {sprite = {}})
+    world:attach(grid.add_hex(world, 43, 36), {sprite = {}})
+    world:attach(grid.add_hex(world, 43, 37), {sprite = {}})
+    world:attach(grid.add_hex(world, 42, 37), {sprite = {}})
+    world:attach(grid.add_hex(world, 43, 38), {sprite = {}})
+    world:attach(grid.add_hex(world, 43, 39), {sprite = {}})
+    world:attach(grid.add_hex(world, 42, 40), {sprite = {}})
+
+    -- "3"
+    world:attach(grid.add_hex(world, 45, 35), {sprite = {}})
+    world:attach(grid.add_hex(world, 46, 35), {sprite = {}})
+    world:attach(grid.add_hex(world, 46, 36), {sprite = {}})
+    world:attach(grid.add_hex(world, 46, 37), {sprite = {}})
+    world:attach(grid.add_hex(world, 45, 37), {sprite = {}})
+    world:attach(grid.add_hex(world, 46, 38), {sprite = {}})
+    world:attach(grid.add_hex(world, 46, 39), {sprite = {}})
+    world:attach(grid.add_hex(world, 45, 40), {sprite = {}})
+
+    for i = 28, 49 do
+        world:attach(grid.add_hex(world, i, 32), {sprite = {}})
+        world:attach(grid.add_hex(world, i, 43), {sprite = {}})
+    end
+    for j = 32, 43 do
+        world:attach(grid.add_hex(world, 28, j), {sprite = {}})
+        world:attach(grid.add_hex(world, 49, j), {sprite = {}})
+    end
 end
 
 function love.update(dt)

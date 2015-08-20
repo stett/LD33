@@ -1,10 +1,12 @@
-settings = require('settings')
+local settings = require('settings')
 
 return {
     register = function(world)
 
-        -- Attaches one entity to a specific slot in the grid system
+        -- 'hex' attaches one entity to a specific slot in the grid system,
+        -- and 'hexes' attaches the grid system to the instance.
         world:addComponent('hex', {slot=nil})
+        world:addComponent('hexes', {list={}})
 
         -- Tracks adjacency between grid spaces.
         -- The neighbors component is owned by the base grid spaces.
