@@ -4,6 +4,12 @@ local grid = require('grid')
 return {
     update = function(self, dt)
 
+        -- Clear all the accelerations
+        for entity in pairs(self.world:query('acceleration')) do
+            entity.acceleration.x = 0
+            entity.acceleration.y = 9.8
+        end
+
         -- Update the velocities of entities with accelerations
         for entity in pairs(self.world:query('velocity acceleration')) do
             entity.velocity.x = entity.velocity.x + entity.acceleration.x * dt
@@ -32,23 +38,19 @@ return {
                 if neighbor ~= nil then
 
                     -- Remove from current slot
-                    --[[
                     local i
-                    for i, hex in ipairs(entity.hex.slot.hexes.list) do
+                    for i, hex in ipairs(slot.hexes.list) do
                         if hex == entity then break end
                     end
-                    table.remove(entity.hex.slot.hexes.list, i)
-                    ]]
+                    table.remove(slot.hexes.list, i)
 
                     -- Move into this neighbor
                     entity.hex.slot = neighbor
                     table.insert(neighbor.hexes.list, entity)
 
                     -- Correct the offset
-                    --entity.offset.x = entity.offset.x > 0 and entity.offset.x + 2 or entity.offset.x - 2
-                    --entity.offset.y = entity.offset.y > 0 and entity.offset.y + 2 or entity.offset.y - 2
-                    entity.offset.x = (entity.offset.x - neighbor.position.x + slot.position.x) * .1
-                    entity.offset.y = (entity.offset.y - neighbor.position.y + slot.position.y) * .1
+                    entity.offset.x = (entity.offset.x - neighbor.position.x + slot.position.x) * .85
+                    entity.offset.y = (entity.offset.y - neighbor.position.y + slot.position.y) * .85
                 end
             end
         end

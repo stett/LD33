@@ -25,7 +25,7 @@ function love.load()
     -- Add some hexes to the grid?
 
     -- "L"
-    world:attach(grid.add_hex(world, 31, 35), {sprite = {}, offset={}, velocity={x=10, y=-15}})
+    world:attach(grid.add_hex(world, 31, 35), {sprite = {}, offset={}, velocity={x=10, y=-15}, acceleration={}})
     world:attach(grid.add_hex(world, 31, 36), {sprite = {}})
     world:attach(grid.add_hex(world, 31, 37), {sprite = {}})
     world:attach(grid.add_hex(world, 31, 38), {sprite = {}})
