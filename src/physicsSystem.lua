@@ -1,6 +1,20 @@
 local settings = require('settings')
 local grid = require('grid')
 
+local function add_physics(world, entity)
+    if entity.velocity == nil then
+        world:attach(entity, {velocity={}})
+    end
+
+    if entity.acceleration == nil then
+        world:attach(entity, {acceleration={}})
+    end
+
+    if entity.offset == nil then
+        world:attach(entity, {offset={}})
+    end
+end
+
 return {
     update = function(self, dt)
 
@@ -25,6 +39,48 @@ return {
             if not below_is_empty then
                 --entity.acceleration.y = entity.acceleration.y - 800
             end
+        end
+
+        -- Resolve destructive collisions
+        for entity in pairs(self.world:query('hex acceleration velocity collision destruct')) do
+            local other = entity.collision.entity
+
+            if other.destructable ~= nil then
+                grid.delete(self.world, other)
+            end
+            --[[
+            if other.gainsPhysicsWhenDestroyed ~= nil then
+                add_physics(self.world, other)
+            end
+
+            --grid.swap(entity, other)
+            --other.acceleration.x = other.acceleration.x - entity.velocity.x / dt
+            --other.acceleration.y = other.acceleration.y - entity.velocity.y / dt
+            other.velocity.x = -entity.velocity.x
+            other.velocity.y = -entity.velocity.y
+
+            self.world:detach(entity, 'collision')
+            self.world:detach(other, 'collision')
+            ]]
+        end
+
+        for entity in pairs(self.world:query('hex acceleration velocity collision explode')) do
+
+            function destroy_if_destructable(slot)
+                for i, hex in ipairs(slot.hexes.list) do
+                    if hex.destructable ~= nil then
+                        grid.delete(self.world, hex)
+                    end
+                end
+            end
+
+            local other = entity.collision.entity
+            destroy_if_destructable(entity.hex.slot.neighbors.east)
+            destroy_if_destructable(entity.hex.slot.neighbors.southeast)
+            destroy_if_destructable(entity.hex.slot.neighbors.southwest)
+            destroy_if_destructable(entity.hex.slot.neighbors.west)
+            destroy_if_destructable(entity.hex.slot.neighbors.northwest)
+            destroy_if_destructable(entity.hex.slot.neighbors.northeast)
         end
 
         -- Resolve collisions
@@ -115,6 +171,8 @@ return {
                         self.world:attach(other, {collision={entity=entity}})
                     end
                 else
+                    entity.velocity.x = -entity.velocity.x
+                    entity.velocity.y = -entity.velocity.y
                     entity.offset.x = 0
                     entity.offset.y = 0
                 end

@@ -28,6 +28,7 @@ return {
         world:addComponent('acceleration', {x=0, y=0})
         world:addComponent('collision', {slot=nil})
         world:addComponent('hover', {height=2})
+        world:addComponent('gravity')
 
         -- Behavior properties
         world:addComponent('orbit', {other=nil})
@@ -59,5 +60,10 @@ return {
 
         -- Control properties
         world:addComponent('jumpy')
+        world:addComponent('destruct')
+        world:addComponent('explode')
+        world:addComponent('destructable')
+        world:addComponent('attractor')
+        world:addComponent('attracted')
     end
 }

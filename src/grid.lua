@@ -95,4 +95,41 @@ function module.add_hex(world, i, j)
     return entity
 end
 
+function module.delete(world, hex)
+    local i
+    for i, _hex in ipairs(hex.hex.slot.hexes.list) do
+        if _hex == hex then break end
+    end
+    table.remove(hex.hex.slot.hexes.list, i)
+    world:delete(hex)
+end
+
+function module.delete_space(world, slot)
+    for i, hex in ipairs(slot.hexes.list) do
+        world:delete(hex)
+        table.remove(slot.hexes.list, i)
+    end
+end
+
+function module.swap(hex1, hex2)
+    local slot1 = hex1.hex.slot
+    local slot2 = hex2.hex.slot
+
+    local i
+    for i, hex in ipairs(slot1.hexes.list) do
+        if hex == hex1 then break end
+    end
+    table.remove(slot1.hexes.list, i)
+    for i, hex in ipairs(slot2.hexes.list) do
+        if hex == hex2 then break end
+    end
+    table.remove(slot2.hexes.list, i)
+
+    table.insert(slot2.hexes.list, hex1)
+    table.insert(slot1.hexes.list, hex2)
+
+    hex1.slot = slot2
+    hex2.slot = slot1
+end
+
 return module

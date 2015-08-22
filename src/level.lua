@@ -71,6 +71,9 @@ function module.generate(world, background_hex_image, background_color, level_ta
                         acceleration={},
                         hover={height=4},
                         jumpy={},
+                        attractor={},
+                        gravity={}
+                        --explode={},
                     })
                     --world:attach(hex, {
                     --    sprite={image=love.graphics.newImage("res/shadowfuz.png")},
@@ -81,16 +84,32 @@ function module.generate(world, background_hex_image, background_color, level_ta
                 -- Earth
                 elseif c == '#' then
                     world:attach(hex, {
-                        sprite={image=love.graphics.newImage("res/green.png")},
+                        sprite = {image=love.graphics.newImage("res/green.png")},
+                        --gainsPhysicsWhenDestroyed = {},
                         --offset={},
                         --velocity={},
                         --acceleration={},
+                        destructable={}
+                    })
+
+                -- Stone
+                elseif c == "*" then
+                    world:attach(hex, {
+                        sprite = {image=love.graphics.newImage("res/light.png")},
+                        offset={},
+                        velocity={},
+                        acceleration={},
+                        attracted={},
+                        gravity={}
                     })
 
                 -- Wood
                 elseif c == '|' then
                     world:attach(hex, {
                         sprite={image=love.graphics.newImage("res/brown.png")},
+                        --offset={},
+                        --velocity={},
+                        --acceleration={},
                     })
 
                 -- Roofing

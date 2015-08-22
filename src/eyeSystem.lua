@@ -51,15 +51,14 @@ return {
     draw = function(self)
         for entity in pairs(self.world:query('hex offset eye')) do
             position = {
-                x = entity.hex.slot.position.x,-- + entity.offset.x,
-                y = entity.hex.slot.position.y,-- + entity.offset.y,
-            }
+                x = entity.hex.slot.position.x,
+                y = entity.hex.slot.position.y}
 
 
-            pupil_offset = {
-                x = 0,--position.x - love.mouse.getX() + view.position.x,
-                y = 0,--position.y - love.mouse.getY() + view.position.y,
-            }
+            local mx, my = view.transform(love.mouse.getPosition())
+            local nx, ny = position.x - mx, position.y - my
+            local mag = 2 / math.sqrt(nx*nx + ny*ny)
+            pupil_offset = {x = -nx * mag, y = -ny * mag}
 
             love.graphics.draw(entity.eye.white_image, position.x, position.y, 0, 1, 1, entity.eye.white_image:getWidth() / 2, entity.eye.white_image:getHeight() / 2)
             love.graphics.draw(entity.eye.pupil_image, position.x + pupil_offset.x, position.y + pupil_offset.y, 0, 1, 1, entity.eye.pupil_image:getWidth() / 2, entity.eye.pupil_image:getHeight() / 2)
