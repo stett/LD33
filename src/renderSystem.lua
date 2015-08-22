@@ -12,12 +12,21 @@ return {
         for entity in pairs(self.world:query('hex sprite')) do
             position = entity.hex.slot.position
             image = entity.sprite.image
+
+            -- Apply effects if necessary
+            if entity.flicker ~= nil then
+                flicker = (100 - entity.flicker.amount + love.math.random(entity.flicker.amount)) / 100
+                love.graphics.setColor(255, 255, 255, 255 * flicker)
+            end
+
             love.graphics.draw(
                 image,
                 position.x, position.y,
                 0, 1, 1,
                 image:getWidth() / 2,
                 image:getHeight() / 2)
+
+            love.graphics.setColor(255, 255, 255, 255)
         end
 
         -- Draw an offset dot for hex items with offsets

@@ -17,6 +17,8 @@ local module = {}
 
     '+': Spawn point
 
+    '.': Ember
+
 ]]
 
 function module.clear(world)
@@ -63,21 +65,28 @@ function module.generate(world, background_hex_image, background_color, level_ta
                 if c == '#' then
                     world:attach(hex, {
                         sprite={image=love.graphics.newImage("res/green.png")},
-                        offset={},
-                        velocity={},
-                        acceleration={},
+                        --offset={},
+                        --velocity={},
+                        --acceleration={},
                     })
 
                 -- Wood
                 elseif c == '|' then
                     world:attach(hex, {
-                        sprite={image=love.graphics.newImage("res/brown.png")}
+                        sprite={image=love.graphics.newImage("res/brown.png")},
                     })
 
                 -- Roofing
                 elseif c == '^' then
                     world:attach(hex, {
-                        sprite={image=love.graphics.newImage("res/yellow.png")}
+                        sprite={image=love.graphics.newImage("res/yellow.png")},
+                    })
+
+                -- Ember
+                elseif c == '.' then
+                    world:attach(hex, {
+                        sprite={image=love.graphics.newImage("res/orange.png")},
+                        flicker={amount=50},
                     })
                 end
             end

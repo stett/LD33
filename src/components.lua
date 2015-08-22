@@ -34,5 +34,6 @@ return {
             batch=love.graphics.newSpriteBatch(
                 love.graphics.newImage("res/gray.png"),
                 settings.GRID_SIZE.width * settings.GRID_SIZE.height)})
+        world:addComponent('flicker', {amount=100})
     end
 }
