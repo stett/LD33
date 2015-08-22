@@ -18,6 +18,7 @@ function love.load()
     -- Add systems
     world:addSystem('render', require('renderSystem'))
     world:addSystem('physics', require('physicsSystem'))
+    world:addSystem('eyes', require('eyeSystem'))
 
     -- Load a level
     level.generate(world, 'res/gray.png', {0, 0, 0}, {
@@ -59,7 +60,7 @@ function love.load()
         '',
         '',
         '',
-        '',
+        '                                          +',
         '',
         '',
         '',
@@ -93,7 +94,8 @@ function love.draw()
 
     w, h = love.window.getWidth(), love.window.getHeight()
     love.graphics.translate(w/2, h/2)
-    love.graphics.scale(.65)
+    --love.graphics.scale(.65)
+    love.graphics.scale(1)
     world:draw()
 end
 

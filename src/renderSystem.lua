@@ -10,19 +10,28 @@ return {
 
         -- Render gridded hexes that have sprites
         for entity in pairs(self.world:query('hex sprite')) do
-            position = entity.hex.slot.position
-            image = entity.sprite.image
+            local position = entity.hex.slot.position
+            local image = entity.sprite.image
 
             -- Apply effects if necessary
             if entity.flicker ~= nil then
-                flicker = (100 - entity.flicker.amount + love.math.random(entity.flicker.amount)) / 100
+                local flicker = (100 - entity.flicker.amount + love.math.random(entity.flicker.amount)) / 100
                 love.graphics.setColor(255, 255, 255, 255 * flicker)
+            end
+
+            local linear_offset = {x=0, y=0}
+            local angular_offset = 0
+            if entity.jitter ~= nil then
+                linear_offset = {
+                    x = love.math.random(entity.jitter.linear),
+                    y = love.math.random(entity.jitter.linear)}
+                angular_offset = (love.math.random(entity.jitter.angular) - (entity.jitter.angular * 0.5)) * math.pi / 180
             end
 
             love.graphics.draw(
                 image,
-                position.x, position.y,
-                0, 1, 1,
+                position.x + linear_offset.x, position.y + linear_offset.y,
+                angular_offset, 1, 1,
                 image:getWidth() / 2,
                 image:getHeight() / 2)
 

@@ -91,8 +91,8 @@ return {
                     -- mark this one for collision resolution
                     else
                         -- Reset the offset
-                        entity.offset.x = 0
-                        entity.offset.y = 0
+                        --entity.offset.x = 0
+                        --entity.offset.y = 0
 
                         -- We co-mark the collision with just the FIRST hex in the neighboring slot
                         local other = neighbor.hexes.list[1]

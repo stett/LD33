@@ -61,8 +61,23 @@ function module.generate(world, background_hex_image, background_color, level_ta
             if c ~= ' ' then
                 hex = grid.add_hex(world, i, j)
 
+                -- Player
+                if c == '+' then
+                    local player = world:attach(hex, {
+                        eye={},
+                        offset={},
+                        velocity={},
+                        acceleration={},
+                        jitter={linear=1, angular=1}
+                    })
+                    world:attach(hex, {
+                        sprite={image=love.graphics.newImage("res/shadowfuz.png")},
+                        flicker={amount=10},
+                        jitter={linear=1, angular=360},
+                    })
+
                 -- Earth
-                if c == '#' then
+                elseif c == '#' then
                     world:attach(hex, {
                         sprite={image=love.graphics.newImage("res/green.png")},
                         --offset={},
