@@ -7,10 +7,11 @@ return {
         -- Clear all accelerations
         for entity in pairs(self.world:query('acceleration')) do
             entity.acceleration.x = 0
-            entity.acceleration.y = 0
+            entity.acceleration.y = 98
         end
 
         -- Accelerate all hexes towards the center of the board
+        --[[
         for entity in pairs(self.world:query('hex acceleration')) do
             position = hex.slot.position
             g = 9.8
@@ -18,6 +19,7 @@ return {
             gx = -position.x * g_over_mag
             gy = -position.y * g_over_mag
         end
+        ]]
 
         -- Resolve collisions
         for entity in pairs(self.world:query('acceleration velocity collision')) do
