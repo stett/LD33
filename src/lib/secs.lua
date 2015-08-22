@@ -109,6 +109,8 @@ end
 function class:addEntity(components)
     local entity = {}
 
+    entity.world = self
+
     if components then
         self:attach(entity, components)
     else

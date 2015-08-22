@@ -16,9 +16,13 @@ function love.load()
     components.register(world)
 
     -- Add systems
+    world:addSystem('view', require('viewSystem'))
     world:addSystem('render', require('renderSystem'))
+    world:addSystem('gravity', require('gravitySystem'))
+    world:addSystem('controls', require('controlsSystem'))
     world:addSystem('physics', require('physicsSystem'))
     world:addSystem('eyes', require('eyeSystem'))
+    world:addSystem('fuz', require('fuzSystem'))
 
     -- Load a level
     level.generate(world, 'res/gray.png', {0, 0, 0}, {

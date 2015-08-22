@@ -1,4 +1,5 @@
 local grid = require('grid')
+local settings = require('settings')
 local module = {}
 
 --[[
@@ -68,13 +69,14 @@ function module.generate(world, background_hex_image, background_color, level_ta
                         offset={},
                         velocity={},
                         acceleration={},
-                        jitter={linear=1, angular=1}
+                        hover={height=4},
+                        jumpy={},
                     })
-                    world:attach(hex, {
-                        sprite={image=love.graphics.newImage("res/shadowfuz.png")},
-                        flicker={amount=10},
-                        jitter={linear=1, angular=360},
-                    })
+                    --world:attach(hex, {
+                    --    sprite={image=love.graphics.newImage("res/shadowfuz.png")},
+                    --    flicker={amount=10},
+                    --    jitter={linear=1, angular=360},
+                    --})
 
                 -- Earth
                 elseif c == '#' then

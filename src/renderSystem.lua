@@ -1,4 +1,5 @@
-settings = require('settings')
+local settings = require('settings')
+local view = require('view')
 
 return {
     draw = function(self)
@@ -37,6 +38,9 @@ return {
 
             love.graphics.setColor(255, 255, 255, 255)
         end
+
+        --local mx, my = view.transform(love.mouse.getPosition())
+        --love.graphics.circle("fill", mx, my, 20)
 
         -- Draw an offset dot for hex items with offsets
         --[[

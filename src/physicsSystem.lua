@@ -4,22 +4,28 @@ local grid = require('grid')
 return {
     update = function(self, dt)
 
-        -- Clear all accelerations
-        for entity in pairs(self.world:query('acceleration')) do
-            entity.acceleration.x = 0
-            entity.acceleration.y = 98
-        end
+        -- Cause floating things to hover
+        for entity in pairs(self.world:query('hex velocity hover')) do
+            below = grid.get_hex(
+                entity.hex.slot.position.x,
+                entity.hex.slot.position.y + 20 * entity.hover.height)
 
-        -- Accelerate all hexes towards the center of the board
-        --[[
-        for entity in pairs(self.world:query('hex acceleration')) do
-            position = hex.slot.position
-            g = 9.8
-            g_over_mag = g / math.sqrt(position.x * position.x + position.y * position.y)
-            gx = -position.x * g_over_mag
-            gy = -position.y * g_over_mag
+            below_is_empty = true
+            if below == nil then
+                below_is_empty = false
+            else
+                for _, hex in ipairs(below.hexes.list) do
+                    if hex.fuz ~= nil then
+                        below_is_empty = false
+                        break
+                    end
+                end
+            end
+
+            if not below_is_empty then
+                --entity.acceleration.y = entity.acceleration.y - 800
+            end
         end
-        ]]
 
         -- Resolve collisions
         for entity in pairs(self.world:query('acceleration velocity collision')) do
@@ -69,6 +75,15 @@ return {
                 -- Make sure we have a neighbor to move into
                 if neighbor ~= nil then
 
+                    -- Remove fuz from other slot
+                    for i, hex in ipairs(neighbor.hexes.list) do
+                        if hex.fuz ~= nil then
+                            table.remove(neighbor.hexes.list, i)
+                            self.world:delete(hex)
+                            break
+                        end
+                    end
+
                     -- If the neighbor is empty, make the shift
                     if #neighbor.hexes.list == 0 then
 
@@ -91,14 +106,17 @@ return {
                     -- mark this one for collision resolution
                     else
                         -- Reset the offset
-                        --entity.offset.x = 0
-                        --entity.offset.y = 0
+                        entity.offset.x = 0
+                        entity.offset.y = 0
 
                         -- We co-mark the collision with just the FIRST hex in the neighboring slot
                         local other = neighbor.hexes.list[1]
                         self.world:attach(entity, {collision={entity=other}})
                         self.world:attach(other, {collision={entity=entity}})
                     end
+                else
+                    entity.offset.x = 0
+                    entity.offset.y = 0
                 end
             end
         end

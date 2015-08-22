@@ -27,6 +27,7 @@ return {
         world:addComponent('velocity', {x=0, y=0})
         world:addComponent('acceleration', {x=0, y=0})
         world:addComponent('collision', {slot=nil})
+        world:addComponent('hover', {height=2})
 
         -- Behavior properties
         world:addComponent('orbit', {other=nil})
@@ -54,5 +55,9 @@ return {
             lid_image = eye_lid_image,
             lid_anim = anim8.newAnimation(eye_lid_grid('1-3', 1), .2),
         })
+        world:addComponent('fuz', {life=100})
+
+        -- Control properties
+        world:addComponent('jumpy')
     end
 }
