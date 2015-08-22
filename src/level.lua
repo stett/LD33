@@ -9,7 +9,9 @@ local module = {}
 
     '*': Boulder
 
-    '^': Cottage
+    '^': Cottage roof
+
+    '|': Wood
 
     '!': Villager
 
@@ -30,7 +32,10 @@ function module.clear(world)
     end
 end
 
-function module.generate(world, background_hex_image, level_table)
+function module.generate(world, background_hex_image, background_color, level_table)
+
+    -- Set the background color
+    love.graphics.setBackgroundColor(background_color)
 
     -- Get dimensions from the table
     local grid_width = #level_table[1]
@@ -57,10 +62,22 @@ function module.generate(world, background_hex_image, level_table)
                 -- Earth
                 if c == '#' then
                     world:attach(hex, {
-                        sprite={image=love.graphics.newImage("res/brown.png")},
+                        sprite={image=love.graphics.newImage("res/green.png")},
                         offset={},
                         velocity={},
                         acceleration={},
+                    })
+
+                -- Wood
+                elseif c == '|' then
+                    world:attach(hex, {
+                        sprite={image=love.graphics.newImage("res/brown.png")}
+                    })
+
+                -- Roofing
+                elseif c == '^' then
+                    world:attach(hex, {
+                        sprite={image=love.graphics.newImage("res/yellow.png")}
                     })
                 end
             end
