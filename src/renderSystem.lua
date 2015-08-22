@@ -21,6 +21,7 @@ return {
         end
 
         -- Draw an offset dot for hex items with offsets
+        --[[
         for entity in pairs(self.world:query('hex offset')) do
             position = {
                 x = entity.hex.slot.position.x + entity.offset.x,
@@ -31,6 +32,7 @@ return {
             love.graphics.circle("line", position.x, position.y, 3)
             love.graphics.setColor(255, 255, 255, 255)
         end
+        ]]
 
         -- Highlight hex slots containing hexes
         --[[

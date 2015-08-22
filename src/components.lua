@@ -25,6 +25,7 @@ return {
         -- Physics properties 
         world:addComponent('velocity', {x=0, y=0})
         world:addComponent('acceleration', {x=0, y=0})
+        world:addComponent('collision', {slot=nil})
 
         -- Graphics properties
         world:addComponent('sprite', {

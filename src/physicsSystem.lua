@@ -4,10 +4,39 @@ local grid = require('grid')
 return {
     update = function(self, dt)
 
-        -- Clear all the accelerations
+        -- Clear all accelerations
         for entity in pairs(self.world:query('acceleration')) do
             entity.acceleration.x = 0
-            entity.acceleration.y = 9.8
+            entity.acceleration.y = 0
+        end
+
+        -- Accelerate all hexes towards the center of the board
+        for entity in pairs(self.world:query('hex acceleration')) do
+            position = hex.slot.position
+            g = 9.8
+            g_over_mag = g / math.sqrt(position.x * position.x + position.y * position.y)
+            gx = -position.x * g_over_mag
+            gy = -position.y * g_over_mag
+        end
+
+        -- Resolve collisions
+        for entity in pairs(self.world:query('acceleration velocity collision')) do
+
+            -- Get the other entity
+            local other = entity.collision.entity
+
+            -- Get the velocities
+            local v1 = entity.velocity
+            local v2 = other.velocity or {x=0, y=0}
+
+            -- Calculate instantaneous acceleration for this guy
+            entity.acceleration.x = entity.acceleration.x + (v2.x - v1.x) / dt
+            entity.acceleration.y = entity.acceleration.y + (v2.y - v1.y) / dt
+
+            --io.write('v1.x=', v1.x, ', ', 'v2.x=', v2.x, ', ', '(v2.x-v1.x)/dt=', (v2.x-v1.x)/dt, '\n')
+
+            -- Mark it resolved by removing the collision component
+            self.world:detach(entity, 'collision')
         end
 
         -- Update the velocities of entities with accelerations
@@ -35,22 +64,39 @@ return {
                 local angle = math.atan2(entity.offset.y, entity.offset.x)
                 local neighbor = grid.get_neighbor(slot, angle)
 
+                -- Make sure we have a neighbor to move into
                 if neighbor ~= nil then
 
-                    -- Remove from current slot
-                    local i
-                    for i, hex in ipairs(slot.hexes.list) do
-                        if hex == entity then break end
+                    -- If the neighbor is empty, make the shift
+                    if #neighbor.hexes.list == 0 then
+
+                        -- Remove from current slot
+                        local i
+                        for i, hex in ipairs(slot.hexes.list) do
+                            if hex == entity then break end
+                        end
+                        table.remove(slot.hexes.list, i)
+
+                        -- Move into this neighbor
+                        entity.hex.slot = neighbor
+                        table.insert(neighbor.hexes.list, entity)
+
+                        -- Correct the offset
+                        entity.offset.x = (entity.offset.x - neighbor.position.x + slot.position.x) * .85
+                        entity.offset.y = (entity.offset.y - neighbor.position.y + slot.position.y) * .85
+
+                    -- If there are already hexes in the neighbor, reset the offset and
+                    -- mark this one for collision resolution
+                    else
+                        -- Reset the offset
+                        entity.offset.x = 0
+                        entity.offset.y = 0
+
+                        -- We co-mark the collision with just the FIRST hex in the neighboring slot
+                        local other = neighbor.hexes.list[1]
+                        self.world:attach(entity, {collision={entity=other}})
+                        self.world:attach(other, {collision={entity=entity}})
                     end
-                    table.remove(slot.hexes.list, i)
-
-                    -- Move into this neighbor
-                    entity.hex.slot = neighbor
-                    table.insert(neighbor.hexes.list, entity)
-
-                    -- Correct the offset
-                    entity.offset.x = (entity.offset.x - neighbor.position.x + slot.position.x) * .85
-                    entity.offset.y = (entity.offset.y - neighbor.position.y + slot.position.y) * .85
                 end
             end
         end
